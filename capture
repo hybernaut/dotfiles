@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# capture a file by moving it here and replacing the original with a symlink
+
+ROOT=$(pwd)
+if [ ! -d $2 ]; then
+  mkdir $ROOT/$2
+fi
+
+filename=$(basename $1)
+target=$ROOT/$2/$filename
+
+echo "Moving '$1' to '$target'"
+
+if [ -f $1 ]; then
+	mv $1 $target
+	ln -s $target $1
+fi
