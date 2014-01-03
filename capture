@@ -2,17 +2,18 @@
 
 # capture a file by moving it here and replacing the original with a symlink
 
+# Project root
 ROOT=$(pwd)
-if [ ! -d $2 ]; then
-  mkdir $ROOT/$2
+
+if [ ! -d "$2" ]; then
+  mkdir -p "$ROOT/$2"
 fi
 
-filename=$(basename $1)
-target=$ROOT/$2/$filename
+filename=$(basename "$1")
+target="$ROOT/$2/$filename"
 
 echo "Moving '$1' to '$target'"
 
-if [ -f $1 ]; then
-	mv $1 $target
-	ln -s $target $1
+if [ -f "$1" ]; then
+	mv "$1" "$target" && ln -s "$target" "$1"
 fi
