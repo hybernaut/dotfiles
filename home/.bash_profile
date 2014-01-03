@@ -15,11 +15,11 @@ alias speak="say -v zarvox -r 150"
 
 alias githead='HASH=`git rev-parse --short HEAD` && echo $HASH && printf "%s " $HASH | pbcopy'
 
-binstall() { bundle install --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin --local ; }
+binstall() { bundle install --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin ; }
 
-binstallm() { bundle install --trust-policy MediumSecurity --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin --local ; }
+binstallm() { bundle install --trust-policy MediumSecurity --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin ; }
 
-binstallh() { bundle install --trust-policy HighSecurity --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin --local ; }
+binstallh() { bundle install --trust-policy HighSecurity --path $HOME/dl/vendor/$1/bundle --binstubs $HOME/dl/vendor/$1/bin ; }
 
 # username for [tarball style] code push
 LRUSER=dlmaint
