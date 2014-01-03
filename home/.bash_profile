@@ -48,7 +48,13 @@ export PIDFILE_DIR=/tmp
 
 if [ -f "git-completion.sh" ]; then
 
-  . git-completion.sh
+  source git-completion.sh
+
+fi
+
+if [ -f "git-prompt.sh" ]; then
+
+  source git-prompt.sh
 
 	BLACK="\[\033[0;30m\]"
 	RED="\[\033[0;31m\]"
@@ -62,8 +68,8 @@ if [ -f "git-completion.sh" ]; then
 	PS1="\h:\W$BLUE\$(__git_ps1)$BLACK 🍺 ∵ "
 fi
 
-if [ -d "/Applications/Postgres.app/Contents/MacOS/bin" ]; then
-  PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+if [ -d "/Applications/Postgres93.app/Contents/MacOS/bin" ]; then
+  PATH="/Applications/Postgres93.app/Contents/MacOS/bin:$PATH"
 fi
 
 # node via brew
