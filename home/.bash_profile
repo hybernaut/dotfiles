@@ -4,6 +4,8 @@ alias space='df -PHT hfs'
 alias ls='ls -F'
 alias routes='netstat -f inet -rn'
 
+export EDITOR=subl
+
 # put anything in here that should not be distributed (machine-specific or security related)
 if [ -f ".bash_profile.local" ]; then
 	source ".bash_profile.local"
