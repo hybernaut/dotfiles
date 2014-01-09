@@ -1,4 +1,28 @@
 {
-	"font_size": 12.0,
-	"save_on_focus_lost": true
+	"auto_complete_commit_on_tab": true,
+	"color_scheme": "Packages/Color Scheme - Default/Dawn.tmTheme",
+	"file_exclude_patterns":
+	[
+		"public/javascripts/firebug-lite-compressed.js"
+	],
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		".bundle",
+		"CVS",
+		"tmp",
+		"log",
+		"devnotes",
+		"coverage"
+	],
+	"font_size": 10.0,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": true,
+	"tab_size": 2
 }
