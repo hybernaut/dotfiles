@@ -18,5 +18,3 @@
   algorithm = patience
 [push]
 	default = simple
-[heroku]
-	account = dl

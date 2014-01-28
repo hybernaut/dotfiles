@@ -46,6 +46,16 @@ lrup() {
 	fi
 }
 
+crules() {
+	app=$1
+	shift
+	echo "heroku $* --app crules-$app"
+	heroku $* --app crules-$app
+}
+alias millard="crules millard"
+alias lineage="crules lineage"
+alias staging="crules staging"
+
 export PIDFILE_DIR=/tmp
 
 if [ -f "git-completion.sh" ]; then
