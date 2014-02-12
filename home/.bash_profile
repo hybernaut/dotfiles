@@ -4,6 +4,21 @@ alias space='df -PHT hfs'
 alias ls='ls -F'
 alias routes='netstat -f inet -rn'
 
+# https://github.com/christianbundy/whereami
+whereami() {
+	echo "$(tput setaf 2)$(whoami)$(tput setaf 0)@$(tput setaf 3)$(hostname)$(tput setaf 0):$(tput setaf 6)$(pwd)$(tput sgr0)" | pbcopy
+}
+# https://github.com/christianbundy/sshcd
+sshcd() {
+	t="${!#}"
+	c=("ssh" "-t" "${@:1:$(($#-1))}" "${t%:*}" "cd ${t##*:}; \$SHELL -l")
+	"${c[@]}"
+}
+sshlra() {
+	port="$1"
+	sshcd -p $port dlmaint@10.1.1.208:/var/www/lightrules
+}
+
 export EDITOR=subl
 
 # put anything in here that should not be distributed (machine-specific or security related)
