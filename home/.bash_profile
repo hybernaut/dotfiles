@@ -6,7 +6,8 @@ alias routes='netstat -f inet -rn'
 
 # https://github.com/christianbundy/whereami
 whereami() {
-	echo "$(tput setaf 2)$(whoami)$(tput setaf 0)@$(tput setaf 3)$(hostname)$(tput setaf 0):$(tput setaf 6)$(pwd)$(tput sgr0)" | pbcopy
+	echo "$(whoami)@$(hostname):$(pwd)" | (pbcopy)
+	echo "$(tput setaf 2)$(whoami)$(tput setaf 0)@$(tput setaf 3)$(hostname)$(tput setaf 0):$(tput setaf 6)$(pwd)$(tput sgr0)"
 }
 # https://github.com/christianbundy/sshcd
 sshcd() {
@@ -16,7 +17,7 @@ sshcd() {
 }
 sshlra() {
 	port="$1"
-	sshcd -p $port dlmaint@10.1.1.208:/var/www/lightrules
+	sshcd -p $port dlmaint@lra.tun:/var/www/lightrules
 }
 
 export EDITOR=subl
