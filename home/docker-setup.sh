@@ -8,3 +8,8 @@ alias d="docker"
 alias dc='docker-compose'
 alias dm='docker-machine'
 alias vgs="vagrant global-status"
+
+ECS_CLUSTER=default
+ecs() {
+  aws ecs $* --cluster $ECS_CLUSTER
+}
